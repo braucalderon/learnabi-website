@@ -30,6 +30,7 @@ const UserLoginButton = () => {
     }
   };
 
+  
   const signInWithGithub = () => {
     if (adminEmail === null) {
       auth.signInWithRedirect(providerGithub);
@@ -59,7 +60,7 @@ const UserLoginButton = () => {
         const unsubscribe = auth.onAuthStateChanged(async (userAuth) => {
           if (!userAuth) return;
           if(userAuth.email !== 'admin@learnabi.com'){
-            const userRef = firestore.doc(`learnabiUsers/user:${userAuth.uid}`);
+            const userRef = firestore.doc(`learnabiUsers/${userAuth.uid}`);
             // console.log(userAuth);
             const snapShot = await userRef.get(); //snapShot from cloud firestore
   

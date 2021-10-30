@@ -41,7 +41,10 @@ class OurTeam extends Component {
       .then((querySnapShot) => {
         const data = querySnapShot.docs.map((item) => item.data());
         this.setState({ data: data });
-      });
+      })
+      .catch((error) => {
+        console.log(error.message);
+      })
   }
 
   render() {

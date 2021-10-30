@@ -78,6 +78,7 @@ const AdminTeam = () => {
   const onHandlerEditNewForm = (e) =>{
     e.preventDefault();
     updateEmployeeHandler(email, name, title, image);
+    setEditBoolean(false);
     reset();
   }
   const onHandlerDeleteCard = (path)=> {
